@@ -20,14 +20,14 @@
                 }
                 //Phone needs to match filter
                 var phone_filter = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
-                if(!phone_filter.test($("#phone".val()))){
+                if(!phone_filter.test($("#phone").val())){
                     $("#phone").css({"background-color": "red"});
-                    $("#phone").css({"color":"white"});
-                    $("#phoneE").css({"display":"block"});
-                }else{
+                    $("#phoneE").css({"display": "block"});
+                    $("#phone").css({"color": "white"});
+                }else {
                     $("#phone").css({"background-color": "white"});
-                    $("#phoneE").css({"display":"none"});
-                    $("#phone").css({"color":"black"});
+                    $("#phoneE").css({"display": "none"});
+                    $("#phone").css({"color": "black"});
                 }
 
                 //Needs to match email filter
@@ -76,6 +76,46 @@
                     $("#streetE").css({"display": "none"});
                     $("#street").css({"color": "black"});
                 }
+                // DOB - Must be entered
+                if($("#dob").val().length === 0){
+                    $("#dob").css({"background-color":"red"});
+                    $("#dobE").css({"display":"block"});
+                    $("#dob").css({"color":"white"});
+                }else {
+                    $("#dob").css({"background-color": "white"});
+                    $("#dob").css({"display": "none"});
+                    $("#dob").css({"color": "black"});
+                }
+                //Username - Must be entered
+                if($("#username").val().length === 0){
+                    $("#username").css({"background-color":"red"});
+                    $("#usernameE").css({"display":"block"});
+                    $("#username").css({"color":"white"});
+                }else {
+                    $("#username").css({"background-color": "white"});
+                    $("#username").css({"display": "none"});
+                    $("#username").css({"color": "black"});
+                }
+                //City - Must be entered
+                if($("#city").val().length === 0){
+                    $("#city").css({"background-color":"red"});
+                    $("#cityE").css({"display":"block"});
+                    $("#city").css({"color":"white"});
+                }else {
+                    $("#city").css({"background-color": "white"});
+                    $("#city").css({"display": "none"});
+                    $("#city").css({"color": "black"});
+                }
+                //Zip - Must be entered
+                if($("#zip").val().length === 0){
+                    $("#zip").css({"background-color":"red"});
+                    $("#zipE").css({"display":"block"});
+                    $("#zip").css({"color":"white"});
+                }else {
+                    $("#zip").css({"background-color": "white"});
+                    $("#zip").css({"display": "none"});
+                    $("#zip").css({"color": "black"});
+                }
             });
         });
     </script>
@@ -102,6 +142,8 @@
 
     <label for="city">City</label>
     <input type="text" name="city" id="city" />
+    <div id="cityE" style="display:none">Please enter a valid city name.</div>
+
     <label for="state">State</label>
     <select name="state" id="state">
         <option value="AL">Alabama</option>
@@ -158,6 +200,7 @@
     </select>
     <label for="zip">Zip</label>
     <input type="text" name="city" id="zip" /><br />
+    <div id="zipE" style="display:none">Please enter a valid zip number.</div>
 
     <label for="phone">Phone</label>
     <input type="text" name="phone" id="phone" placeholder="123-456-7890"/><br />
@@ -169,9 +212,11 @@
 
     <label for="dob">DOB</label>
     <input type="text" name="dob" id="dob" /><br />
+    <div id="dobE" style="display:none">Please enter a valid date of birth.</div>
 
     <label for="username">Username</label>
     <input type="text" name="username" id="username" /><br />
+    <div id="usernameE" style="display:none">Please enter a valid username.</div>
 
     <label for="password">Password</label>
     <input type="text" name="password" id="password" /><br />
@@ -187,6 +232,6 @@
 
 </form>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </body>
 </html>
