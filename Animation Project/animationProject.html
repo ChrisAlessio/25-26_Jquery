@@ -7,7 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script>
         $("document").ready(function(){
-            $("button").click(function(){
+            $("#step").click(function(){
                 $("#diver").animate({
                     left: "+=50",
                 });
@@ -16,17 +16,69 @@
                 });
 
             });
+            $("#throw").click(function(){
+                $("#grenade").animate({
+                    left: "+=500",
+                });
+
+            });
+            $("#explode").click(function(){
+                $("#grenade").animate({
+                    opacity:"0",
+                });
+                $("#terminid").animate({
+                    opacity:"0",
+                });
+                $("#explosion").animate({
+                    opacity:"100",
+                });
+            });
+            $("#swarm").click(function(){
+                $("#swarm1").animate({
+                    left:"+=500",
+                });
+                $("#swarm2").animate({
+                    left:"+=500",
+                });
+                $("#swarm3").animate({
+                    left:"+=500",
+                });
+                $("#explosion").animate({
+                    opacity:"0",
+                });
+            });
+            $("#launch").click(function(){
+                $("#diver").animate({
+                    opacity:"0",
+                });
+                $("#diverDown").animate({
+                    opacity:"100",
+                    left:"+=200",
+                });
+
+
+            });
         });
     </script>
 </head>
 <body>
-<div>
-    <button>Play Animation</button>
-    <img id="diver" src="img/Helldiver.webp" style="position:absolute;  top:100px;  width:200px">
-</div>
-<div>
+    <img id="background" src="img/Planet.webp" style="position:absolute; top:25px; left:100px; width:1000px">
+    <button id="step">Step forward (3 times)</button>
+    <button id="throw">Throw Grenade (1 time)</button>
+    <button id="explode">Explode (1 time)</button>
+    <button id="swarm">Swarm (1 time)</button>
+    <button id="launch">Hit (1 time)</button>
+    <img id="diver" src="img/Helldiver.webp" style="position:absolute;  top:100px;  left:125px; width:200px">
+
     <img id="grenade" src="img/Helldiver_g-6-removebg-preview.png" style="position:absolute; top:195px; left:230px;  width:50px">
-</div>
+    <img id="terminid" src="img/H2terminid.png" style="position:absolute; left:800px; top:125px; width:300px;">
+    <img id="explosion" src="img/H2-explosion-removebg-preview.png" style="position:absolute; left:725px; top:125px; width:500px; opacity:0;">
+    <img id="swarm1" src="img/H2terminid.png" style="position:absolute; left:-260px; top:100px; width:300px;">
+    <img id="swarm2" src="img/H2terminid.png" style="position:absolute; left:-300px; top:125px; width:300px;">
+    <img id="swarm3" src="img/H2terminid.png" style="position:absolute; left:-280px; top:150px; width:300px;">
+    <img id="diverDown" src="img/LayingDown.png" style="position:absolute; opacity:0;  top:150px;  left:350px; width:200px">
+
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
